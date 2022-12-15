@@ -26,6 +26,7 @@ InstanceOf: Condition
 Usage: #example
 Title: "Example-TheCondition-References0/Subject"
 Description: "TheCondition-References"
+* clinicalStatus = #active
 * id = "NEW-Condition0"
 * subject = Reference(ThePatient-References)
 
@@ -35,6 +36,7 @@ InstanceOf: Condition
 Usage: #example
 Title: "Example-Condition1/Subject References"
 Description: "Condition1/Subject References"
+* clinicalStatus = #active
 * id = "NEW-Condition-References1"
 * subject = Reference(http://acme.com/Patient/Patient-1234)
 
@@ -56,3 +58,11 @@ Description: "Procedur1/subject Reference"
 * status = #active
 * id = "NEW-Procedure-References1"
 * subject = ThePatientReferencesInLine
+
+
+
+Extension: PatientReferenceExtension
+Id: patient-reference-extension
+Title: "patient-reference-extension"
+Description: "patient-reference-extension"
+* value[x] only Reference(Patient)
